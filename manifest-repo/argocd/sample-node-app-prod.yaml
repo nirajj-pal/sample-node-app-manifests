@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-node-app-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/your-github-org/sample-node-app-manifests.git
+    targetRevision: main
+    path: overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: sample-node-app-prod
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true

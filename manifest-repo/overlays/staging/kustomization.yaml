@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: sample-node-app-staging
+resources:
+  - ../../base
+images:
+  - name: ghcr.io/your-github-org/sample-node-app
+    newTag: 1-initial
+commonLabels:
+  environment: staging
+patches:
+  - target:
+      kind: Deployment
+      name: sample-node-app
+    patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 2
