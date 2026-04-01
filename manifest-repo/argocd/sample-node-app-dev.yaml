@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/your-github-org/sample-node-app-manifests.git
+    repoURL: https://github.com/nirajj-pal/sample-node-app-manifests.git
     targetRevision: main
     path: overlays/dev
   destination:
