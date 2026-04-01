@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: sample-node-app
-          image: ghcr.io/your-github-org/sample-node-app:1-initial
+          image: nirajpal/sample-node-app:1-initial
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
