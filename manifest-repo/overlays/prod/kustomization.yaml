@@ -4,7 +4,7 @@ namespace: sample-node-app-prod
 resources:
   - ../../base
 images:
-  - name: ghcr.io/your-github-org/sample-node-app
+  - name: nirajpal/sample-node-app
     newTag: 1-initial
 commonLabels:
   environment: prod
