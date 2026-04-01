@@ -5,7 +5,7 @@ resources:
   - ../../base
 images:
   - name: nirajpal/sample-node-app
-    newTag: 1-initial
+    newTag: 10-3df5f3dd
 commonLabels:
   environment: dev
 patches:
