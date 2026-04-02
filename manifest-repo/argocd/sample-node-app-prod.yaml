@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/nirajj-pal/sample-node-app-manifests.git
     targetRevision: main
-    path: overlays/prod
+    path: manifest-repo/overlays/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: sample-node-app-prod
