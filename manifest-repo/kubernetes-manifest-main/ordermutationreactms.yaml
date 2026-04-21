@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-mutation-react-ms
+  namespace: poc
+spec:
+  #externalIPs:
+   # - 10.48.209.135
+  selector:
+    app: order-mutation-react-ms
+  ports:
+    - protocol: TCP
+      port: 80
+      nodePort: 32521
+      targetPort: 3000
+  type: NodePort

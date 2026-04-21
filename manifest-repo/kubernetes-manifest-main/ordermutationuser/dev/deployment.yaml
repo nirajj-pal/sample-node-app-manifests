@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ordermutationuser
+  namespace: dev
+  labels:
+    app: ordermutationuser
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ordermutationuser
+  template:
+    metadata:
+      labels:
+        app: ordermutationuser
+    spec:
+      imagePullSecrets:
+        - name: harbor-regcred
+      containers:
+        - name: ordermutationuser
+          image: harbor.lr.in/project-lr/ordermutationuser:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ordermutationwebms
+  namespace: dev
+  labels:
+    app: ordermutationwebms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ordermutationwebms
+  template:
+    metadata:
+      labels:
+        app: ordermutationwebms
+    spec:
+      imagePullSecrets:
+        - name: harbor-regcred
+      containers:
+        - name: ordermutationwebms
+          image: harbor.lr.in/project-lr/ordermutationwebms:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

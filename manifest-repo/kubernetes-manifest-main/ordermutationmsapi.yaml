@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-mutation-ms-api
+  namespace: poc
+spec:
+  selector:
+    app: order-mutation-ms-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+      nodePort: 32522
+  type: NodePort
