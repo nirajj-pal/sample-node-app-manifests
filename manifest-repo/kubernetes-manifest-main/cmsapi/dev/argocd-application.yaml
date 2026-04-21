@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ordermutationmsapi-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: http://10.48.209.150/<your-group>/<your-subgroup>/<your-manifest-repo>.git
+    targetRevision: main
+    path: ordermutationmsapi/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
