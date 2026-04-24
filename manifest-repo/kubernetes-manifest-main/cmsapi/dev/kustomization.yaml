@@ -9,4 +9,5 @@ resources:
 
 images:
   - name: harbor.lr.in/project-lr/ordermutationmsapi
-    newTag: be6d5b09
+    newTag: 79d61e00
+    newName: docker.io/nirajpal/sample-node-app
